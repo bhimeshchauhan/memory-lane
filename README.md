@@ -1,28 +1,118 @@
-# Planned coding challenge: Memory lane
 
-**Please avoid initiating pull requests on this repository or forking this repository. To submit your solution, either set up a repository on your own account or forward a zip file to the appropriate contact within our talent team.**
+# Memory Lane
 
-### Problem definition
+Memory Lane is a web application to record and display memorable events in a timeline format. Users can add, edit, and delete memories, view images in a slideshow modal, and toggle favorite status for events. The project is built using React for the frontend and Express.js with SQLite3 for the backend.
 
-After a series of discovery calls we found out a problem that our users are facing. They are having a hard time sharing their memories with friends and family. They are using a combination of social media, messaging apps, and email to share their memories. They are looking for a solution that allows them to store and share their memories in a single place.
+---
 
-As a first iteration for this solution, we want to build a web application that allows users to create a memory lane and share it with friends and family. A memory lane is a collection of events that happened in a chronological order. Each event consists of a title, a description, a timestamp, and at least one image.
+## Demo
 
-## Deliverables
 
-- Clone this repository and create a new branch with your name. Open a pull request on your own instance of the repository.
-- An updated README providing a high level explanation of your implementation.
-- **Screenshots or a short video/gif** showing your UI implementation.
-- Update the API to accommodate for your technical design. Run the API by using `npm run serve:api`.
-- The provided mockup is only for reference and inspiration. Feel free to improve it!
 
-### FAQ
+Access the application locally:
 
-- **Can I add a framework like Next?** If you have the time, go for it, we want to see you use your favorite tools.
-- **Is user authentication required?** No, it is not required.
-- **Can I use a component library?** Yes, you can use a component library.
-- **What will you be looking for?** Good user experience, reusable code, and a well thought out technical design.
+- **Frontend**: [http://localhost:5173](http://localhost:5173)
+- **Backend**: Runs on [http://localhost:4001](http://localhost:4001)
 
-### Inspiration mockup
+---
 
-![Memory lane mockup](./memory_lane.png)
+## Features
+
+1. **Add Memories**: Add a new memory with a title, description, date, and images.
+2. **Edit Memories**: Edit existing memories while preserving or adding images.
+3. **Delete Memories**: Remove memories after confirmation.
+4. **Favorite Memories**: Mark memories as favorite and toggle the favorite status.
+5. **Image Modal**: View images in a modal slideshow with navigation controls.
+6. **Responsive Design**: Works seamlessly across different screen sizes.
+7. **Timeline View**: Memories are grouped by months and displayed in a timeline format.
+
+---
+
+## Installation and Setup
+
+Follow these steps to set up and run the project locally:
+
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd memory-lane
+```
+
+### 2. Install Dependencies
+Install the required dependencies for both the server and client:
+```bash
+npm install
+```
+
+---
+
+## Running the Application
+
+### 1. Seed the Database
+Run the database seeder to populate initial data for testing:
+```bash
+npm run db:seed
+```
+
+### 2. Start the API Server
+Start the backend server for handling API requests:
+```bash
+npm run serve:api
+```
+
+The server will run on **`http://localhost:4001`**.
+
+### 3. Start the Development Server
+Run the React development server for the client:
+```bash
+npm run dev
+```
+
+The client will be accessible at **`http://localhost:5173`**.
+
+---
+
+## Application Structure
+
+### Frontend
+
+- **Language**: TypeScript
+- **Framework**: React
+- **Styling**: Tailwind CSS, Ant Design
+- **Key Components**:
+  - **SwivelCard**: Displays individual memory cards with options to edit, delete, and toggle favorite status.
+  - **MemoryModal**: Modal for adding or editing memories.
+  - **ImageModal**: Modal for viewing images in a slideshow.
+
+### Backend
+
+- **Language**: JavaScript
+- **Framework**: Express.js
+- **Database**: SQLite3
+- **Endpoints**:
+  - **GET `/timeline`**: Fetches all memories grouped by month.
+  - **POST `/memories`**: Adds a new memory.
+  - **PUT `/memories/:id`**: Updates an existing memory.
+  - **PATCH `/memories/:id/favorite`**: Toggles the favorite status of a memory.
+  - **DELETE `/memories/:id`**: Deletes a memory.
+
+---
+
+## Next Steps
+
+1. **State Management**: Implement Redux or Context API for better state handling.
+2. **Testing**: Add unit tests using Jest for frontend and backend.
+3. **Enhanced Security**: Integrate authentication and authorization for managing memories.
+4. **Deployment**: Deploy the application to platforms like Vercel (frontend) and Heroku (backend).
+
+---
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request for review.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
