@@ -7,7 +7,9 @@ Memory Lane is a web application to record and display memorable events in a tim
 
 ## Demo
 
-| ![Demo 1](./public/demo1.gif) | ![Demo 2](./public/demo2.gif) |
+| ![Demo 1](./public/mob.gif) | ![Demo 2](./public/web.gif) |
+|-------------------------|-------------------------|
+| **Mobile**          | **Web App**          |
 
 Access the application locally:
 
